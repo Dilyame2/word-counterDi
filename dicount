@@ -1,0 +1,58 @@
+package WordCounter1;
+import java.awt.*;  
+import javax.swing.*;  
+import java.awt.event.*;  
+public class Dilobar extends JFrame implements ActionListener
+{  
+    
+ private static final long serialVersionUID = 1L;
+ JLabel l1,l2;  
+    JTextArea k;  
+    JButton b;  
+     
+    Dilobar()
+    {  
+        super();  
+        l1=new JLabel("Characters: ");  
+        l1.setBounds(30,30,100,20);  
+        l2=new JLabel("Words: ");  
+        l2.setBounds(190,30,100,20);  
+          
+          
+          
+        b=new JButton("click");  
+        b.setBounds(125,290, 80,30); 
+        b.addActionListener(this);  
+     
+        k=new JTextArea();  
+        k.setBounds(30,70,300,200);
+       
+      
+      
+  
+        add(l1);add(l2);add(k);add(b);
+          
+        setSize(360,360);  
+        setLayout(null); 
+        setVisible(true);  
+        setDefaultCloseOperation(EXIT_ON_CLOSE);  
+    }  
+    @SuppressWarnings("unused")
+ private void JTextArea() {
+  // TODO Auto-generated method stub
+  
+ }
+ public void actionPerformed(ActionEvent e){  
+        if(e.getSource()==b){  
+        String text=k.getText();  
+        l1.setText("Characters: "+text.length());  
+        String words[]=text.split("\\s");  
+        l2.setText("Words: "+words.length);  
+        
+        }  
+        
+    }  
+public static void main(String[] args) {  
+    new Dilobar();  
+}
+}
